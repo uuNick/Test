@@ -22,20 +22,6 @@ const inputFieldsInModal = document.querySelector('.input_fields_in_modal');
 const btnAddRestaurant = document.querySelector(".button_add_restaurant");
 const btnClearlocalStorage = document.querySelector(".button_clear_local_storage");
 
-function getCurrentUser() {
-    let returnValue = localStorage.getItem('currentUser');
-    if (returnValue != null) {
-        if (returnValue == 'unauthorized') {
-            return returnValue;
-        }
-    }
-    else {
-        returnValue = "unauthorized";
-        localStorage.setItem('currentUser', returnValue);
-        return returnValue;
-    }
-    return JSON.parse(returnValue);
-}
 
 let users = [
     {
@@ -48,9 +34,22 @@ let users = [
         "last_name": "Sidarenko",
         "middle_name": "",
         "role": "admin"
-    }]
+    },
+    {
+        "nick": "neff112",
+        "password": "ny0_8CFx0ZEb79,5qK49",
+        "email": "bulubak@gmail.com",
+        "telephone": "+375 (29) 441-34-32",
+        "birth_date": "2004/02/10",
+        "first_name": "Алексей",
+        "last_name": "Смиронов",
+        "middle_name": "Васильевич",
+        "role": "user",
+        "basket": []
+    }
+  ]
 
-let currentUser = users[0];
+let currentUser = users[1];
 
 function updatePageElements(currentUser) {
     if (currentUser.role === "admin") {
