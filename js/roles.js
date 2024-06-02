@@ -37,7 +37,20 @@ function getCurrentUser() {
     return JSON.parse(returnValue);
 }
 
-let currentUser = getCurrentUser()
+let users = [
+    {
+        "nick": "Nikita",
+        "password": "1111111aA.",
+        "email": "nikitasidarenko@gmail.com",
+        "telephone": "+375 (29) 234-97-23",
+        "birth_date": "2004/10/1",
+        "first_name": "Nikita",
+        "last_name": "Sidarenko",
+        "middle_name": "",
+        "role": "admin"
+    }]
+
+let currentUser = users[0];
 
 function updatePageElements(currentUser) {
     if (currentUser.role === "admin") {
